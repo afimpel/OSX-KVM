@@ -151,30 +151,39 @@ processors work just fine (even for macOS Sonoma).
 
 - Use this macOS VM disk with libvirt (virt-manager / virsh stuff).
 
-  - Edit `macOS-libvirt-Catalina.xml` file and change the various file paths (search
-    for `CHANGEME` strings in that file). The following command should do the
-    trick usually.
+  - OPTION: A:
+    - Run command: (The `4` means `4 gigs` of ram in virt-manager. (Remendation `8GB` would be an `8`))
+      ```bash
+      ./make-libvirt.sh 4
+      ```
+    - Launch `virt-manager` and start the `macOS` virtual machine.
 
-    ```bash
-    sed "s/CHANGEME/$USER/g" macOS-libvirt-Catalina.xml > macOS.xml
+  - OPTION: B:
 
-    virt-xml-validate macOS.xml
-    ```
+    - Edit `macOS-libvirt-Catalina.xml` file and change the various file paths (search
+      for `CHANGEME` strings in that file). The following command should do the
+      trick usually.
 
-  - Create a VM by running the following command.
+      ```bash
+      sed "s/CHANGEME/$USER/g" macOS-libvirt-Catalina.xml > macOS.xml
 
-    ```bash
-    virsh --connect qemu:///system define macOS.xml
-    ```
+      virt-xml-validate macOS.xml
+      ```
 
-  - If needed, grant necessary permissions to libvirt-qemu user,
+    - Create a VM by running the following command.
 
-    ```bash
-    sudo setfacl -m u:libvirt-qemu:rx /home/$USER
-    sudo setfacl -R -m u:libvirt-qemu:rx /home/$USER/OSX-KVM
-    ```
+      ```bash
+      virsh --connect qemu:///system define macOS.xml
+      ```
 
-  - Launch `virt-manager` and start the `macOS` virtual machine.
+    - If needed, grant necessary permissions to libvirt-qemu user,
+
+      ```bash
+      sudo setfacl -m u:libvirt-qemu:rx /home/$USER
+      sudo setfacl -R -m u:libvirt-qemu:rx /home/$USER/OSX-KVM
+      ```
+
+    - Launch `virt-manager` and start the `macOS` virtual machine.
 
 
 ### Headless macOS
