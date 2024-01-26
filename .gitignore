@@ -12,3 +12,5 @@ MyDisk*.qcow2
 OVMF_VARS-*.fd
 OVMF_VARS*.fd
 OpenCore-Catalina/EFI/OC/Resources/
+macOS.xml
+OVMF_VARS-1920x1080.fd
