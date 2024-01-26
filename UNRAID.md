@@ -10,8 +10,6 @@ Note: SpaceInvaderOne has a community app called `macinabox`, and it is a Docker
   - [Misc](#misc)
   - [Resources](#resources)
 
-## Motivation
-This guide solely uses the files generated from this repository to construct a VM for use in UNRAID. This means updates to and features of this repository should be compatible with creating VMs in UNRAID. This type of setup also aims to utilize UNRAID's advantages to address items in the [Contributing Back](https://github.com/afimpel/OSX-KVM#contributing-back) section of the main repository, including creating/re-using VM snapshots, build farms, VNC+SSH support, and capacity of delivering a bare-metal-like experience for development. Further customization in setting up Hackintosh on KVM is beyond the scope of this documentation, but feel free to provide relevant [supplemental resources](#resources).
 
 ## Pre-Requisites
 Follow the [Installation Preparation](https://github.com/afimpel/OSX-KVM#installation-preparation) guide and have your disk image `MyDisk.qcow2` and installation media `BaseSystem.dmg` ready.
