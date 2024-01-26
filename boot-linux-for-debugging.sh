@@ -5,7 +5,7 @@
 # https://github.com/thenickdude/KVM-Opencore/
 # https://github.com/qemu/qemu/blob/master/docs/usb2.txt
 #
-# qemu-img create -f qcow2 mac_hdd_ng.img 128G
+# qemu-img create -f qcow2 MyDisk.qcow2 128G
 #
 # echo 1 > /sys/module/kvm/parameters/ignore_msrs (this is required)
 

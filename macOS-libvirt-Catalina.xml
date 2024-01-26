@@ -34,9 +34,9 @@
 	give the clock a tsc timer for kvm to pass to the guest.
 	See comments on the <kvm> and <clock> attributes.
 -->
-  <name>macOS</name>
+  <name>macOS_CHANGEME</name>
   <uuid>2aca0dd6-cec9-4717-9ab2-0b7b13d111c3</uuid>
-  <title>macOS</title>
+  <title>macOS - CHANGEME</title>
   <memory unit='KiB'>4194304</memory>
   <currentMemory unit='KiB'>4194304</currentMemory>
   <vcpu placement='static'>4</vcpu>
@@ -69,7 +69,7 @@
     </disk>
     <disk type='file' device='disk'>
       <driver name='qemu' type='qcow2' cache='writeback' io='threads'/>
-      <source file='/home/CHANGEME/OSX-KVM/mac_hdd_ng.img'/>
+      <source file='/home/CHANGEME/OSX-KVM/MyDisk.qcow2'/>
       <target dev='sdb' bus='sata'/>
       <boot order='1'/>
       <address type='drive' controller='0' bus='0' target='0' unit='1'/>

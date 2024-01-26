@@ -11,16 +11,16 @@ Note: SpaceInvaderOne has a community app called `macinabox`, and it is a Docker
   - [Resources](#resources)
 
 ## Motivation
-This guide solely uses the files generated from this repository to construct a VM for use in UNRAID. This means updates to and features of this repository should be compatible with creating VMs in UNRAID. This type of setup also aims to utilize UNRAID's advantages to address items in the [Contributing Back](https://github.com/kholia/OSX-KVM#contributing-back) section of the main repository, including creating/re-using VM snapshots, build farms, VNC+SSH support, and capacity of delivering a bare-metal-like experience for development. Further customization in setting up Hackintosh on KVM is beyond the scope of this documentation, but feel free to provide relevant [supplemental resources](#resources).
+This guide solely uses the files generated from this repository to construct a VM for use in UNRAID. This means updates to and features of this repository should be compatible with creating VMs in UNRAID. This type of setup also aims to utilize UNRAID's advantages to address items in the [Contributing Back](https://github.com/afimpel/OSX-KVM#contributing-back) section of the main repository, including creating/re-using VM snapshots, build farms, VNC+SSH support, and capacity of delivering a bare-metal-like experience for development. Further customization in setting up Hackintosh on KVM is beyond the scope of this documentation, but feel free to provide relevant [supplemental resources](#resources).
 
 ## Pre-Requisites
-Follow the [Installation Preparation](https://github.com/kholia/OSX-KVM#installation-preparation) guide and have your disk image `mac_hdd_ng.img` and installation media `BaseSystem.dmg` ready.
+Follow the [Installation Preparation](https://github.com/afimpel/OSX-KVM#installation-preparation) guide and have your disk image `MyDisk.qcow2` and installation media `BaseSystem.dmg` ready.
 
 Ensure you have VM support and passthrough parameters prepared (VFIO devices, PCI controllers, VNC remote, etc.). You should also have a way of reading/writing to the appropriate locations in your UNRAID server (I use `Krusader`).
 
 ## Preparing the VM
 Below are sample instructions for setting up the VM. We will keep the necessary files in the same directory for simplicity.
-* Place these 3 files `BaseSystem.img`, `mac_hdd_ng.img` and `OSX-KVM/OpenCore/OpenCore.qcow2` into the directory of your VM
+* Place these 3 files `BaseSystem.img`, `MyDisk.qcow2` and `OSX-KVM/OpenCore/OpenCore.qcow2` into the directory of your VM
   * ie: Into `/mnt/user/domains/BigSur`, where domains is the folder for your VMs
 * Create a new VM and edit the XML. Use the OSX-KVM repository's `macOS-libvirt-Catalina.xml` as a guide
   * ie: You also have the option to use the GUI to adjust the CPUs, RAM, setting the OS installation media and disk images, as well as the devices you wish to pass into the VM. However, each time the template is edited via the GUI, you must go in the XML editor and paste the qemu args at the bottom of the XML file.
@@ -28,7 +28,7 @@ Below are sample instructions for setting up the VM. We will keep the necessary 
 * Check that the three files' primary vDisk bus is SATA, and verify types:
   * OpenCore.qcow2 `<driver name='qemu' type='qcow2' cache='writeback'/>`
   * BaseSystem.img `<driver name='qemu' type='raw' cache='writeback'/>`
-  * mac_hdd_ng.img `<driver name='qemu' type='qcow2' cache='writeback'/>`
+  * MyDisk.qcow2 `<driver name='qemu' type='qcow2' cache='writeback'/>`
 * After successful installation, the BaseSystem.img entry can be safely deleted from the XML
 
 ## Starting the VM

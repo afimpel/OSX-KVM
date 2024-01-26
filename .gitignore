@@ -1,6 +1,7 @@
 *.iso
 mac_hdd.img
 mac_hdd_ng.img
+MyDisk*.qcow2
 *.sha256sum
 *.sucatalog
 *.img

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# NOTE -> https://github.com/kholia/OSX-KVM/blob/master/reversing-notes.md
+# NOTE -> https://github.com/afimpel/OSX-KVM/blob/master/reversing-notes.md
 #
 # https://github.com/radareorg/radare2-r2pipe/blob/master/python/examples/libgraph.py
 # https://github.com/radareorg/radare2-r2pipe/tree/master/python

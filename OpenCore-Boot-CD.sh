@@ -5,7 +5,7 @@
 # https://github.com/thenickdude/KVM-Opencore/
 # https://github.com/qemu/qemu/blob/master/docs/usb2.txt
 #
-# qemu-img create -f qcow2 mac_hdd_ng.img 128G
+# qemu-img create -f qcow2 MyDisk.qcow2 128G
 #
 # echo 1 > /sys/module/kvm/parameters/ignore_msrs (this is required)
 
@@ -46,7 +46,7 @@ args=(
   -device ide-hd,bus=sata.2,drive=OpenCoreBoot
   -device ide-hd,bus=sata.3,drive=InstallMedia
   -drive id=InstallMedia,if=none,file="$REPO_PATH/os.dmg",format=raw
-  -drive id=MacHDD,if=none,file="$REPO_PATH/mac_hdd_ng.img",format=qcow2
+  -drive id=MacHDD,if=none,file="$REPO_PATH/MyDisk.qcow2",format=qcow2
   -device ide-hd,bus=sata.4,drive=MacHDD
   # -netdev tap,id=net0,ifname=tap0,script=no,downscript=no -device vmxnet3,netdev=net0,id=net0,mac=52:54:00:c9:18:27
   -netdev user,id=net0 -device vmxnet3,netdev=net0,id=net0,mac=52:54:00:c9:18:27
