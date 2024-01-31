@@ -152,7 +152,7 @@ processors work just fine (even for macOS Sonoma).
 - Use this macOS VM disk with libvirt (virt-manager / virsh stuff).
 
   - OPTION: A:
-    - Run command: (The `4` means `4 gigs` of ram in virt-manager. (Remendation `8GB` would be an `8`))
+    - Run command: (The `4` means `4GB` of ram in virt-manager. (Remendation `8GB` would be an `8`))
       ```bash
       ./make-libvirt.sh 4
       ```
