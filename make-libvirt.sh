@@ -14,8 +14,8 @@ sed "s/CHANGEramGB/$CHANGEramGB/g" macOS00.xml > macOS01.xml
 sed "s/CHANGEram/$CHANGEram/g" macOS01.xml > macOS02.xml
 sed "s/CHANGEuuid/$UUID/g" macOS02.xml > macOS03.xml
 sed "s/changeMacADDR/$macaddr/g" macOS03.xml > macOS_${UUID}.xml
-virt-xml-validate macOS_${CHANGEramGB}G.xml
+virt-xml-validate macOS_${UUID}.xml
 sudo setfacl -m u:libvirt-qemu:rx /home/$USER
 sudo setfacl -R -m u:libvirt-qemu:rx /home/$USER/OSX-KVM
-virsh --connect qemu:///system define macOS_${CHANGEramGB}G.xml
+virsh --connect qemu:///system define macOS_${UUID}.xml
 rm macOS0*.xml
