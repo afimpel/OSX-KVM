@@ -7,8 +7,8 @@ fi
 CHANGEramGB=$(( ( $CHANGEram / 1024 ) / 1024 ));
 macaddr=$(echo $FQDN|md5sum|sed 's/^\(..\)\(..\)\(..\)\(..\)\(..\).*$/02:\1:\2:\3:\4:\5/')
 CHANGEramGB=$(( ( $CHANGEram / 1024 ) / 1024 ));
-echo "RAM: $CHANGEramGB GB / MAC ADDR: $macaddr / UUID: ${UUID}";
 UUID=$(cat /proc/sys/kernel/random/uuid)
+echo "RAM: $CHANGEramGB GB / MAC ADDR: $macaddr / UUID: ${UUID} / macOS_${UUID}.xml";
 sed "s/CHANGEME/$USER/g" macOS-libvirt.xml > macOS00.xml
 sed "s/CHANGEramGB/$CHANGEramGB/g" macOS00.xml > macOS01.xml
 sed "s/CHANGEram/$CHANGEram/g" macOS01.xml > macOS02.xml

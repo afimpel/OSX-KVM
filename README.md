@@ -39,7 +39,7 @@ processors work just fine (even for macOS Sonoma).
   used in the following steps.
 
   ```bash
-  cd ~ ### important
+  cd ~ ### Very important
 
   git clone --depth 1 --recursive https://github.com/afimpel/OSX-KVM.git
 
@@ -149,10 +149,10 @@ processors work just fine (even for macOS Sonoma).
 
 - Go ahead, and install macOS 🙌
 
-- Use this macOS VM disk with libvirt (virt-manager / virsh stuff).
+- Use this macOS VM disk with libvirt (`virt-manager` / virsh stuff).
 
-  - OPTION: A:
-    - Run command: (The `4` means `4GB` of ram in virt-manager. (Remendation `8GB` would be an `8`))
+  - OPTION: A:  (**Remediation**)
+    - Run command: (The `4` means `4GB` of ram in virt-manager. (Remediation `8GB` would be an `8`))
       ```bash
       ./make-libvirt.sh 4
       ```
@@ -194,9 +194,16 @@ processors work just fine (even for macOS Sonoma).
   ./boot-macOS-headless.sh
   ```
 
-
+----
 ### Post-Installation
 
+#### Safari Fix
+**Remediation:** install `Google Chrome` to be able to download the following programs more comfortably.
+1. Go to: https://github.com/dortania/OpenCore-Legacy-Patcher/releases and download the most recent version of `AutoPkg-Assets.pkg` and install.
+2. enter:
+https://mrmacintosh.com/macos-safari-full-installer-database-download-directly-from-apple/ and download `Safari17.3VenturaAuto.pkg` today if you see a newer version, download that one and install it .
+
+#### extras
 * See [networking notes](networking-qemu-kvm-howto.txt) on how to setup networking in your VM, outbound and also inbound for remote access to your VM via SSH, VNC, etc.
 
 * To passthrough GPUs and other devices, see [these notes](notes.md#gpu-passthrough-notes).
@@ -206,3 +213,6 @@ processors work just fine (even for macOS Sonoma).
 * Trouble with iMessage? Check out the [notes](notes.md#trouble-with-imessage) included in this repository.
 
 * Highly recommended macOS tweaks - https://github.com/sickcodes/osx-optimizer
+
+* Tools: The MacPorts Project - https://ports.macports.org/ example: `nmap, jq, htop, bash` and more ...
+
